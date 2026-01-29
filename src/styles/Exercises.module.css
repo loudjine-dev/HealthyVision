@@ -1,0 +1,116 @@
+/* ===================== Variables ===================== */
+:root {
+  --primary: #129fb8;
+  --accent: #38b2ac;
+  --bg: #f7fcfd;
+  --card-bg: #ffffff;
+  --text-main: #1f2933;
+  --text-muted: #6b7280;
+  --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+  --radius: 18px;
+}
+
+/* ===================== Page ===================== */
+.page {
+  min-height: 100vh;
+  padding: 40px 20px 60px;
+  background-color: var(--bg);
+  font-family: "Cairo", sans-serif;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+/* ===================== Main Title ===================== */
+.title {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 60px;
+}
+
+/* ===================== Section ===================== */
+.section {
+  max-width: 1100px;
+  margin: 0 auto 70px;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 40px;
+  padding-right: 14px;
+  border-right: 6px solid var(--accent);
+}
+
+/* ===================== Card ===================== */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: var(--card-bg);
+  padding: 22px;
+  margin-bottom: 25px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* ===================== Text ===================== */
+.text {
+  flex: 1;
+}
+
+.text h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.text p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ===================== Video ===================== */
+.video {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 14px;
+  background-color: #000;
+  outline: none;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 900px) {
+  .card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .video {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.3rem;
+  }
+
+  .text h3 {
+    font-size: 1.15rem;
+  }
+}
