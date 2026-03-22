@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "../styles/Gym.module.css";
 
 /* ✅ المسار الصحيح للصور مع GitHub Pages */
-const cuttingImg = "/cutting/images/Cutting.png";
-const bulkingImg = "/cutting/images/Bulking.png";
+const bulkingImg = "images/Bulking.png";
+const cuttingImg = "images/Cutting.png";
 
 export default function Gym() {
   return (
