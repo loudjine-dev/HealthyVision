@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/Gym.module.css";
 
-import cuttingImg from "/images/Cutting.png";
-import bulkingImg from "/images/Bulking.png";
+/* ✅ المسار الصحيح للصور مع GitHub Pages */
+const cuttingImg = "/cutting/images/Cutting.png";
+const bulkingImg = "/cutting/images/Bulking.png";
 
 export default function Gym() {
   return (
