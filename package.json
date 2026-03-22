@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "homepage": "https://loudjine-dev.github.io/HealthyVision",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "chart.js": "^4.5.1",
@@ -18,6 +20,12 @@
     "recharts": "^3.6.0"
   },
   "devDependencies": {
+    "@vitejs/plugin-react": "^5.1.3",
+    "gh-pages": "^6.3.0",
     "vite": "^7.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/loudjine-dev/HealthyVision.git"
   }
 }

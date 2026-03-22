@@ -63,9 +63,6 @@ export default function CuttingNutrition() {
         ))}
       </section>
 
-      <footer className={styles.footer}>
-        © 2025 Healthy Vision – جميع الحقوق محفوظة
-      </footer>
     </div>
   );
 }

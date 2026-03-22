@@ -1,84 +1,47 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import {
-  FaFlask,
-  FaStethoscope,
-  FaPills,
-  FaDumbbell,
-  FaAmbulance,
-  FaClipboardList
-} from "react-icons/fa";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Gym.module.css";
 
-const cardsData = [
-  { title: "تحاليل طبية", img: "/images/تحاليل.png", link: "/medical-tests", icon: <FaFlask /> },
-  { title: "نصائح طبية", img: "/images/نصائح طبية.webp", link: "/medical-advice", icon: <FaStethoscope /> },
-  { title: "تذكير الأدوية", img: "/images/ادوية.png", link: "/medication-reminder", icon: <FaPills /> },
-  { title: "الجيم", img: "/images/الجيم.jpg", link: "/gym", icon: <FaDumbbell /> },
-  { title: "الطوارئ الذكية", img: "/images/الطوارئ.png", link: "/emergency", icon: <FaAmbulance /> },
-  { title: "إدارة الصحة", img: "/images/إدارة.webp", link: "/health-administration", icon: <FaClipboardList /> }
-];
+import cuttingImg from "/images/Cutting.png";
+import bulkingImg from "/images/Bulking.png";
 
-export default function Home() {
-
-  useEffect(() => {
-    // حركة ظهور الكروت عند scroll
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add(styles.show);
-        }
-      });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll(`.${styles.card}`).forEach(card => observer.observe(card));
-
-    // حركة دخول Hero
-    const heroH1 = document.querySelector(`.${styles.heroContent} h1`);
-    const heroP = document.querySelector(`.${styles.heroContent} p`);
-    heroH1.classList.add(styles.heroIn);
-    heroP.classList.add(styles.heroIn);
-
-  }, []);
-
+export default function Gym() {
   return (
     <div className={styles.page}>
+      <h1 className={styles.title}>حدد هدفك</h1>
 
-      {/* HERO */}
-      <section className={styles.hero} id="hero">
-        <div className={styles.heroContent}>
-          <h1>مرحبا بك في Healthy Vision</h1>
-          <p>منصة طبية ذكية وعصرية لخدمتك</p>
+      <div className={styles.cards}>
+        {/* ===== كرت التنشيف ===== */}
+        <div className={styles.card}>
+          <div className={styles.cardTop}>
+            <img src={cuttingImg} alt="التنشيف" />
+          </div>
+          <div className={styles.cardBody}>
+            <h2>التنشيف</h2>
+            <p>
+              إنقاص نسبة الدهون مع الحفاظ على الكتلة العضلية،
+              للحصول على جسم مشدود، متناسق، وبروز عضلي واضح دون فقدان القوة.
+            </p>
+            <Link to="/cutting" className={styles.btn}>ابدأ</Link>
+          </div>
         </div>
 
-        {/* فقاعات وحركة ماء صحية */}
-        <div className={styles.heroBackground}>
-          {[...Array(30)].map((_, i) => (
-            <div key={i} className={styles.bubble}></div>
-          ))}
-          <div className={styles.waves}></div>
+        {/* ===== كرت التضخيم ===== */}
+        <div className={styles.card}>
+          <div className={styles.cardTop}>
+            <img src={bulkingImg} alt="التضخيم" />
+          </div>
+          <div className={styles.cardBody}>
+            <h2>التضخيم</h2>
+            <p>
+              زيادة الكتلة العضلية بشكل صحي وتدريجي،
+              مع تعزيز القوة البدنية وتحسين الأداء الرياضي،
+              وبناء جسم قوي ومتوازن مع تقليل تراكم الدهون.
+            </p>
+            <Link to="/bulking" className={styles.btn}>ابدأ</Link>
+          </div>
         </div>
-      </section>
-
-      {/* CARDS */}
-      <section className={styles.categories} id="categories">
-        <h2 className={styles.sectionTitle}>الفئات </h2>
-
-        <div className={styles.cards}>
-          {cardsData.map((card, i) => (
-            <Link key={i} to={card.link} className={styles.card}>
-              <img src={card.img} alt={card.title} className={styles.cardImage} />
-              <div className={styles.overlay}></div>
-              <div className={styles.cardContent}>
-                <span className={styles.icon}>{card.icon}</span>
-                <h3>{card.title}</h3>
-                <span className={styles.more}>الدخول</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
+      </div>
     </div>
   );
 }

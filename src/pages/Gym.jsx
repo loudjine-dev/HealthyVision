@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "../styles/Gym.module.css";
 
 import cuttingImg from "/images/Cutting.png";
@@ -21,7 +22,7 @@ export default function Gym() {
               إنقاص نسبة الدهون مع الحفاظ على الكتلة العضلية،
               للحصول على جسم مشدود، متناسق، وبروز عضلي واضح دون فقدان القوة.
             </p>
-            <a href="/cutting" className={styles.btn}>ابدأ</a>
+            <Link to="/cutting" className={styles.btn}>ابدأ</Link>
           </div>
         </div>
 
@@ -37,7 +38,7 @@ export default function Gym() {
               مع تعزيز القوة البدنية وتحسين الأداء الرياضي،
               وبناء جسم قوي ومتوازن مع تقليل تراكم الدهون.
             </p>
-            <a href="/bulking" className={styles.btn}>ابدأ</a>
+            <Link to="/bulking" className={styles.btn}>ابدأ</Link>
           </div>
         </div>
       </div>

@@ -4,10 +4,10 @@ import styles from "../styles/Goals.module.css";
 
 export default function Cutting() {
   const categories = [
-    { title: "نصائح التغذية", link: "/cutting/nutrition" },
-    { title: "التمارين الرياضية", link: "/cutting/exercises" },
-    { title: "وصفات صحية", link: "/cutting/recipes" },
-    { title: "برامج التنشيف", link: "/cutting/program" },
+    { title: "نصائح التغذية", link: "/nutrition" },
+    { title: "التمارين الرياضية", link: "/exercises" },
+    { title: "وصفات صحية", link: "/recipes" },
+    { title: "برامج التنشيف", link: "/program" },
   ];
 
   return (
@@ -28,8 +28,6 @@ export default function Cutting() {
           ))}
         </div>
       </div>
-
-    
     </div>
   );
 }
