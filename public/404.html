@@ -10,7 +10,18 @@
 
 
 </head>
-<body>
+<body><!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      // إعادة توجيه تلقائي إلى index.html مع حفظ المسار
+      var path = window.location.pathname.replace("/cutting", "");
+      window.location.replace("/cutting/#" + path);
+    </script>
+  </head>
+  <body></body>
+</html>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
 </body>
